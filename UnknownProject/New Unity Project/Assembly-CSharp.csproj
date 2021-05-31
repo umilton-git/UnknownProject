@@ -60,6 +60,7 @@
     <Compile Include="Assets\Controls\player\Movement.cs" />
     <Compile Include="Assets\Controls\player\MouseLook.cs" />
     <Compile Include="Assets\Controls\player\stepSound.cs" />
+    <Compile Include="Assets\Controls\player\PlayerLook.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
