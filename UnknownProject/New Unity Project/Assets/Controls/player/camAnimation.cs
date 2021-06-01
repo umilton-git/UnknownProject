@@ -21,13 +21,23 @@ public class camAnimation : MonoBehaviour
                 right = true;
             }
 
-            if (right == true)
+            if (right == true && isMoving == true)
             {
                 if (!anim.isPlaying)
                 {
                     anim.Play("walkRight");
                     right = false;
                     left = true;
+                }
+            }
+
+            if (left == true && isMoving == true)
+            {
+                if (!anim.isPlaying)
+                {
+                    anim.Play("walkLeft");
+                    right = true;
+                    left = false;
                 }
             }
         }
