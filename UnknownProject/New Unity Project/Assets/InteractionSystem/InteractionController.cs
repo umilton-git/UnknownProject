@@ -16,7 +16,15 @@ namespace VHS
         public float raySphereRadius;
         public LayerMask interactableLayer;
         public RectTransform Image;
+        
+        #endregion
+
+        #region Private Variables
+
         private Camera m_cam;
+
+        private bool m_interacting;
+
         #endregion
           
         #region Built In Methods
@@ -29,6 +37,7 @@ namespace VHS
         {
             CheckForInteractable();
             CheckForInteractableInput();
+            GetInteractionInputData();
         }
         #endregion
 
@@ -72,9 +81,35 @@ namespace VHS
             Debug.DrawRay(_ray.origin, _ray.direction * rayDistance, _hitSomething ? Color.green : Color.red);
         }
 
+        void GetInteractionInputData()
+        {
+            interactionInputData.InteractClicked = Input.GetMouseButtonDown(0);
+        }
+
         void CheckForInteractableInput()
         {
 
+            if(interactionData.IsEmpty()) return;
+
+            if(interactionInputData.InteractClicked)
+            {
+                m_interacting = true;
+                Debug.Log("Sets interacting to true");
+            }
+
+            if(interactionInputData.InteractRelease)
+            {
+                m_interacting = false;
+            }
+            if(m_interacting)
+            {
+               if(!interactionData.Interactable.IsInteractable) return;
+               else 
+               {
+                   interactionData.Interact();
+                   m_interacting = false;
+               }
+            }
         }
         #endregion
     }
