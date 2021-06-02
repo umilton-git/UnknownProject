@@ -18,9 +18,9 @@ namespace VHS
         public GameObject Player;
 
         public GameObject Camera;
+        public GameObject DialogueBox;
 
         private bool NextText = true;
-
         public override void OnInteract()
         {
             base.OnInteract();
@@ -43,6 +43,7 @@ namespace VHS
             {
                 DialogueText.text = "";
                 Enable();
+                DialogueBox.SetActive(false);
                 if (this.MultipleUse == true)
                 {
                     Index = 0;
@@ -53,6 +54,7 @@ namespace VHS
 
         IEnumerator WriteSentence()
         {
+            DialogueBox.SetActive(true);
             foreach (char Character in Sentences[Index].ToCharArray())
             {
                 DialogueText.text += Character;
