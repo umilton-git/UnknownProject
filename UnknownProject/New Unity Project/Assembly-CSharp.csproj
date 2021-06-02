@@ -36,15 +36,16 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\InteractionSystem\InteractionData.cs" />
+     <Compile Include="Assets\InteractionSystem\Scripts\InteractionData.cs" />
      <Compile Include="Assets\Controls\player\camAnimation.cs" />
      <Compile Include="Assets\Controls\player\Movement.cs" />
-     <Compile Include="Assets\InteractionSystem\InteractableBase.cs" />
+     <Compile Include="Assets\InteractionSystem\Scripts\InteractableBase.cs" />
      <Compile Include="Assets\Controls\player\MouseLook.cs" />
-     <Compile Include="Assets\InteractionSystem\Interactable.cs" />
-     <Compile Include="Assets\InteractionSystem\InteractionInputData.cs" />
-     <Compile Include="Assets\InteractionSystem\InteractionController.cs" />
+     <Compile Include="Assets\InteractionSystem\Scripts\Interactable.cs" />
+     <Compile Include="Assets\InteractionSystem\Scripts\InteractionInputData.cs" />
+     <Compile Include="Assets\InteractionSystem\Scripts\InteractionController.cs" />
      <Compile Include="Assets\Controls\player\stepSound.cs" />
+     <Compile Include="Assets\InteractionSystem\Interactions\DestroyObject.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Unity Hub/2020.1.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
