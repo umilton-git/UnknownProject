@@ -18,9 +18,13 @@ namespace VHS
         public GameObject Player;
 
         public GameObject Camera;
+
         public GameObject DialogueBox;
 
+        public Animator DialogueBoxAnim;
+
         private bool NextText = true;
+
         public override void OnInteract()
         {
             base.OnInteract();
@@ -36,6 +40,10 @@ namespace VHS
         {
             if (Index <= Sentences.Length - 1)
             {
+                if(Index == 0)
+                {
+                DialogueBoxAnim.SetTrigger("Enter");
+                }
                 DialogueText.text = "";
                 StartCoroutine(WriteSentence());
             }
@@ -43,7 +51,8 @@ namespace VHS
             {
                 DialogueText.text = "";
                 Enable();
-                DialogueBox.SetActive(false);
+                DialogueBoxAnim.ResetTrigger("Enter");
+                DialogueBoxAnim.SetTrigger("Exit");
                 if (this.MultipleUse == true)
                 {
                     Index = 0;
@@ -54,7 +63,10 @@ namespace VHS
 
         IEnumerator WriteSentence()
         {
-            DialogueBox.SetActive(true);
+            if(Index == 0)
+            {
+            yield return new WaitForSeconds(0.8F);
+            }
             foreach (char Character in Sentences[Index].ToCharArray())
             {
                 DialogueText.text += Character;
@@ -76,6 +88,15 @@ namespace VHS
             Player.GetComponent<Movement>().enabled = true;
             Camera.GetComponent<camAnimation>().enabled = true;
             Camera.GetComponent<MouseLook>().enabled = true;
+        }
+
+        private IEnumerator WaitForAnimation(Animation animation)
+        {
+            do
+            {
+                yield return null;
+            }
+            while (animation.isPlaying);
         }
     }
 }
