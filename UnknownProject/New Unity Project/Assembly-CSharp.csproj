@@ -36,17 +36,20 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\InteractionSystem\Scripts\InteractionData.cs" />
-     <Compile Include="Assets\Controls\player\camAnimation.cs" />
-     <Compile Include="Assets\Controls\player\Movement.cs" />
-     <Compile Include="Assets\InteractionSystem\Scripts\InteractableBase.cs" />
-     <Compile Include="Assets\Controls\player\MouseLook.cs" />
-     <Compile Include="Assets\InteractionSystem\Scripts\Interactable.cs" />
-     <Compile Include="Assets\InteractionSystem\Scripts\InteractionInputData.cs" />
-     <Compile Include="Assets\InteractionSystem\Scripts\InteractionController.cs" />
-     <Compile Include="Assets\Controls\player\stepSound.cs" />
-     <Compile Include="Assets\InteractionSystem\Interactions\DestroyObject.cs" />
-     <Compile Include="Assets\InteractionSystem\Interactions\DialogueController.cs" />
+     <Compile Include="Assets\Player\InteractionSystem\Scripts\InteractionData.cs" />
+     <Compile Include="Assets\Player\Controls\player\camAnimation.cs" />
+     <Compile Include="Assets\Player\Controls\player\Movement.cs" />
+     <Compile Include="Assets\Player\InteractionSystem\Scripts\InteractableBase.cs" />
+     <Compile Include="Assets\Player\InteractionSystem\Interactions\DialogueController.cs" />
+     <Compile Include="Assets\Player\Controls\player\MouseLook.cs" />
+     <Compile Include="Assets\Player\InteractionSystem\Scripts\Interactable.cs" />
+     <Compile Include="Assets\Player\InteractionSystem\Scripts\InteractionInputData.cs" />
+     <Compile Include="Assets\Player\InteractionSystem\Scripts\InteractionController.cs" />
+     <Compile Include="Assets\Player\Controls\player\stepSound.cs" />
+     <Compile Include="Assets\Player\InteractionSystem\Interactions\DestroyObject.cs" />
+     <Compile Include="Assets\Player\InventorySystem\Item.cs" />
+     <Compile Include="Assets\Player\InventorySystem\Inventory.cs" />
+     <Compile Include="Assets\Player\InteractionSystem\Interactions\GetItem.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
