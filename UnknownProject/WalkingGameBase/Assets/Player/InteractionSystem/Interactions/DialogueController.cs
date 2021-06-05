@@ -3,28 +3,40 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace VHS
+// Derrived Interaction System for controlling Dialogue
+
+namespace InteractionSystem
 {
     public class DialogueController : InteractableBase
     {
+        // The text object that will be used to print the dialogue
         public TextMeshProUGUI DialogueText;
 
+        // The sentences to be printed
         public string[] Sentences;
 
+        // The index value, used for tracking which sentence the dialogue is on
         private int Index = 0;
 
+        // The speed at which the text is printed
         public float DialogueSpeed;
 
+        // The player object, used for disabling and enabling movement
         public GameObject Player;
 
+        // The camera that the canvas will render everything to
         public GameObject Camera;
 
+        // The Dialogue box that will be used to render everything
         public GameObject DialogueBox;
 
+        // The animation used by the dialogue box
         public Animator DialogueBoxAnim;
 
+        // The boolean that tells whether or not to go to the next sentence/end dialogue
         private bool NextText = true;
 
+        // Override of the OnInteract() virtual function
         public override void OnInteract()
         {
             base.OnInteract();
@@ -36,6 +48,7 @@ namespace VHS
             }
         }
 
+        // Calls next sentence, uses animation triggers for proper dialogue box animating
         void NextSentence()
         {
             if (Index <= Sentences.Length - 1)
@@ -61,6 +74,7 @@ namespace VHS
             }
         }
 
+        // Command to write out the sentences word by word
         IEnumerator WriteSentence()
         {
             if(Index == 0)
@@ -76,6 +90,7 @@ namespace VHS
             NextText = true;
         }
 
+        // Disables movement before dialogue
         void Disable()
         {
             Player.GetComponent<Movement>().enabled = false;
@@ -83,6 +98,7 @@ namespace VHS
             Camera.GetComponent<MouseLook>().enabled = false;
         }
 
+        // Enables movement after dialogue
         void Enable()
         {
             Player.GetComponent<Movement>().enabled = true;
@@ -90,6 +106,7 @@ namespace VHS
             Camera.GetComponent<MouseLook>().enabled = true;
         }
 
+        // Pauses animation, prevents dialogue box from displaying before text
         private IEnumerator WaitForAnimation(Animation animation)
         {
             do

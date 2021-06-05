@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace VHS
+// Destroy object derrived interaction system
+
+namespace InteractionSystem
 {
-public class DestroyObject : InteractableBase
-{
-   public override void OnInteract()
-   {
-       base.OnInteract();
-       Destroy(gameObject);
-   }
-}
+    public class DestroyObject : InteractableBase
+    {
+        public override void OnInteract()
+        {
+            base.OnInteract();
+            Destroy (gameObject);
+        }
+    }
 }

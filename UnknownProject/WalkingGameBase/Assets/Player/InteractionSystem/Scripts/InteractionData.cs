@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace VHS
+// Creator for the InteractionData for the interaction system; be sure to make data
+// objects from this if not already in project, interactablebase needs it!
+
+namespace InteractionSystem
 {
     [CreateAssetMenu(fileName = "Interaction Data", menuName = "InteractionSystem/InteractionData")]
     public class InteractionData : ScriptableObject

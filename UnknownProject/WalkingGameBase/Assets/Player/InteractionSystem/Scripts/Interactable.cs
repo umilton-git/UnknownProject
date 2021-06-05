@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-namespace VHS 
+namespace InteractionSystem
 {
-public interface Interactable
-{
-    bool multipleUse{ get; }
-    bool isInteractable{ get; }
+    public interface Interactable
+    {
+        bool multipleUse { get; }
 
-    void OnInteract();
-}
-}
+        bool isInteractable { get; }
 
+        void OnInteract();
+    }
+}
